@@ -3,33 +3,32 @@ package token
 type TokenType string
 
 type Token struct {
-  Type TokenType
-  Literal string
+	Type    TokenType
+	Literal string
 }
 
 const (
-  ILLEGAL = "ILLEGAL"
-  EOF = "EOF"
-  
-  // 識別子+リテラル
-  INDENT = "INDENT"
-  INT = "INT"
+	ILLEGAL = "ILLEGAL"
+	EOF     = "EOF"
 
-  // 演算子
-  ASSIGN = "="
-  PLUS = "+"
+	// 識別子+リテラル
+	IDENT = "INDENT"
+	INT   = "INT"
 
-  // デリミタ
-  COMMA = ","
-  SEMICOLON = ";"
+	// 演算子
+	ASSIGN = "="
+	PLUS   = "+"
 
-  LPAREN = "("
-  RPAREN = ")"
-  LBRACE = "{"
-  RBRACE = "}"
+	// デリミタ
+	COMMA     = ","
+	SEMICOLON = ";"
 
-  // キーワード
-  FUNCTION = "FUNCTION"
-  LET="LET"
+	LPAREN = "("
+	RPAREN = ")"
+	LBRACE = "{"
+	RBRACE = "}"
+
+	// キーワード
+	FUNCTION = "FUNCTION"
+	LET      = "LET"
 )
-
