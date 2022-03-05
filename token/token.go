@@ -16,8 +16,14 @@ const (
 	INT   = "INT"
 
 	// 演算子
-	ASSIGN = "="
-	PLUS   = "+"
+	ASSIGN   = "="
+	PLUS     = "+"
+	MINUS    = "-"
+	BANG     = "!"
+	ASTERISK = "*"
+	SLASH    = "/"
+	LT       = "<"
+	GT       = ">"
 
 	// デリミタ
 	COMMA     = ","
@@ -33,16 +39,15 @@ const (
 	LET      = "LET"
 )
 
-var keywords = map[string]TokenType {
-  "fn": FUNCTION,
-  "let": LET,
+var keywords = map[string]TokenType{
+	"fn":  FUNCTION,
+	"let": LET,
 }
 
 func LookupIdent(ident string) TokenType {
-  if tok, ok := keywords[ident]; ok {
-    return tok
-  }
+	if tok, ok := keywords[ident]; ok {
+		return tok
+	}
 
-  return IDENT
+	return IDENT
 }
-
