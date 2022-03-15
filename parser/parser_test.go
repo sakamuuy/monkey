@@ -175,7 +175,7 @@ func TestParsingPrefixExpression(t *testing.T) {
 
 		exp, ok := stmt.Expression.(*ast.PrefixExpression)
 		if !ok {
-			t.Fatalf("exp not *ast.PrefixExpression. got=%T", exp.Expression)
+			t.Fatalf("exp not *ast.PrefixExpression. got=%T", stmt.Expression)
 		}
 		if exp.Operator != tt.operator {
 			t.Errorf("literal.Valut not %s. got=%s", tt.operator, exp.Operator)
@@ -195,7 +195,7 @@ func testIntegerLiteral(t *testing.T, il ast.Expression, value int64) bool {
 	if integ.Value != value {
 		t.Errorf("integ.Value not %d. got=%d", value, integ.Value)
 	}
-	if integ.TokenLiteral() != fmt.Sprintf("d", value) {
+	if integ.TokenLiteral() != fmt.Sprintf("%d", value) {
 		t.Errorf("integ.TokenLiteral not %d. got=%s", value, integ.TokenLiteral())
 	}
 
