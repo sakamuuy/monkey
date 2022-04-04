@@ -196,7 +196,7 @@ func TestErrorHandling(t *testing.T) {
 			"unknown operator: BOOLEAN + BOOLEAN",
 		},
 		{
-			"true + false + true + false;",
+			"true + false;",
 			"unknown operator: BOOLEAN + BOOLEAN",
 		},
 		{
