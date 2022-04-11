@@ -301,3 +301,17 @@ func TestFunctionApplication(t *testing.T) {
 		testIntegerObject(t, testEval(tt.input), tt.expected)
 	}
 }
+
+func TestStringLiteral(t *testing.T) {
+	input := `"Hello World!"`
+
+	evaluated := testEval(input)
+	str, ok := evaluated.(*object.String)
+	if !ok {
+		t.Fatalf("object is not String. got=%q", str.Value)
+	}
+
+	if str.Value != "Hello World!" {
+		t.Errorf("String has wrong Value. got=%q", str.Value)
+	}
+}
