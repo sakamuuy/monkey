@@ -320,7 +320,7 @@ func TestStringLiteral(t *testing.T) {
 	}
 }
 
-func TestBuildFunctions(t *testing.T) {
+func TestBuiltinFunctions(t *testing.T) {
 	tests := []struct {
 		input    string
 		expected interface{}
@@ -344,10 +344,9 @@ func TestBuildFunctions(t *testing.T) {
 				t.Errorf("object is not Error. got=%T (%+v)", evaluated, evaluated)
 				continue
 			}
-		}
-
-		if errObj.Message != expected {
-			t.Errorf("wrong error message. expected=%q, got=%q", expected, errObj.Message)
+			if errObj.Message != expected {
+				t.Errorf("wrong error message. expected=%q, got=%q", expected, errObj.Message)
+			}
 		}
 	}
 }
